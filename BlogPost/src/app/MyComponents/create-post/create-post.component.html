@@ -1,0 +1,93 @@
+<!-- <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Create New Post</h1>
+    <form (ngSubmit)="createPost()">
+      <div class="mb-4">
+        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" id="title" [(ngModel)]="post.title" name="title" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Post Title" required>
+      </div>
+      <div class="mb-4">
+        <label for="imageUrl" class="block text-sm font-medium text-gray-700">Image URL</label>
+        <input type="text" id="imageUrl" [(ngModel)]="post.imageUrl" name="imageUrl" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Image URL">
+      </div>
+      <div class="mb-4">
+        <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
+        <textarea id="content" [(ngModel)]="post.content" name="content" rows="6" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Post Content" required></textarea>
+      </div>
+      <button type="submit" class="py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create Post</button>
+    </form>
+  </div>
+   -->
+
+<!-- create-post.component.html -->
+<app-navbar></app-navbar>
+<div *ngIf="isCreating; else onCreating" class="flex flex-col items-center justify-center h-screen">
+  <div class="loader border-t-4 border-blue-500 rounded-full w-12 h-12 animate-spin"></div>
+  <p class="mt-4">Creating Post...</p>
+</div>
+
+<ng-template #onCreating>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Create New Post</h1>
+  <form [formGroup]="createPostForm">
+    <div class="mb-4">
+      <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+      <input formControlName="title" type="text" id="title" name="title"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Post Title"
+        required>
+        <div *ngIf="createPostForm.get('title')?.invalid && createPostForm.get('title')?.touched" class="text-red-500">
+          Title is required and must be at least 3 characters long.
+        </div>
+    </div>
+<!-- 
+    <div class="mb-4">
+      <label for="imageUrl" class="block text-sm font-medium text-gray-700">Image URL</label>
+      <input type="text" formControlName="image" id="imageUrl" name="imageUrl"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Image URL">
+    </div> -->
+    <div class="mb-4">
+      <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+      <input type="file" (change)="onFileSelected($event)" id="image" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
+      <div *ngIf="createPostForm.get('image')?.invalid && createPostForm.get('image')?.touched" class="text-red-500">
+        Image is required.
+      </div>
+    </div>
+
+    <!-- <div class="mb-4">
+      <label for="category" class="block mb-2">Category</label>
+      <select formControlName="category" class="block w-full px-3 py-2 border border-gray-300 rounded-md mb-4">
+        <option value="politics">Politics</option>
+        <option value="sports">Sports</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="music">Music</option>
+        <option value="random">Random</option>
+      </select>
+    </div> -->
+    <div class="mb-4">
+      <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+      <select
+        id="category"
+        formControlName="category"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+      >
+        <option value="" disabled>Select a Category</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.categoryName }}</option>
+      </select>
+      <div *ngIf="createPostForm.controls.category.invalid && createPostForm.controls.category.touched" class="text-red-500">
+        Category is required.
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
+      <textarea formControlName="description" id="content" name="content" rows="6"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Post Content"
+        required></textarea>
+        <div *ngIf="createPostForm.get('description')?.invalid && createPostForm.get('description')?.touched" class="text-red-500">
+          Content is required and must be at least 3 characters long.
+        </div>
+    </div>
+    <button type="submit" (click)="onFormSubmit($event)"
+      class="py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create
+      Post</button>
+  </form>
+</div>
+</ng-template>

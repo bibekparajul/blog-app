@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto px-4 py-8 flex justify-center items-center">
+    <div class="bg-white shadow-md rounded-lg p-6 w-full ">
+      
+      <!-- Avatar and Logout Button -->
+      <div class="flex items-center justify-between mb-6">
+        <!-- Avatar -->
+        <div class="flex items-center space-x-4">
+          <div>
+            <h2 class="text-xl font-bold">{{currentUser.username.toUpperCase()}}</h2>
+            <!-- <p class="text-gray-600">{{currentUser.email}}</p> -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Posts Info Section -->
+      <div class="mt-6">
+        <p><strong>Number of Posts:</strong> {{getPostCount()}}</p>
+  
+        <!-- User's Posts List -->
+        <ul class="space-y-4 mt-4">
+          <li *ngFor="let post of userPosts" class="bg-gray-100 p-4 rounded-lg shadow-sm">
+            <h3 class="font-semibold">{{post.title}}</h3>
+            <h3 class="font-semibold">{{post.createdAt.slice(0,10)}}</h3>
+            <p class="text-gray-600">{{post.description}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

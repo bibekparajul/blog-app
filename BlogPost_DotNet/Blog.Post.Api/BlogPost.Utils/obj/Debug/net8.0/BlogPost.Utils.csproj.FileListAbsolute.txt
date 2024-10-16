@@ -1,0 +1,11 @@
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\bin\Debug\net8.0\BlogPost.Utils.deps.json
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\bin\Debug\net8.0\BlogPost.Utils.dll
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\bin\Debug\net8.0\BlogPost.Utils.pdb
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.AssemblyInfoInputs.cache
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.AssemblyInfo.cs
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.csproj.CoreCompileInputs.cache
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.dll
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\refint\BlogPost.Utils.dll
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\BlogPost.Utils.pdb
+D:\project_infinite\BlogPost_DotNet\Blog.Post.Api\BlogPost.Utils\obj\Debug\net8.0\ref\BlogPost.Utils.dll

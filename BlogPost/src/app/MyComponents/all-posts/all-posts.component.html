@@ -1,0 +1,112 @@
+<!-- all-posts.component.html -->
+<!-- <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">All Blog Posts</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let post of posts" class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img [src]="post.imageUrl" alt="Post Image" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">{{ post.title }}</h2>
+          <p class="text-gray-600 mt-2">{{ post.snippet }}</p>
+          <a [routerLink]="['/post', post.id]" class="text-blue-500 hover:underline mt-4 block">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<!-- all-posts.component.html -->
+<!-- navbar.component.html -->
+
+<app-navbar></app-navbar>
+<!-- <app-featured-post></app-featured-post> -->
+
+<div class="mx-auto p-10">
+    <div class="flex flex-row justify-between ">
+        <h1 class="text-3xl font-bold mb-6">All Blog Posts</h1>
+        <input type="text" [(ngModel)]="searchText" (input)="onSearch()" placeholder="🔍 Search"
+            class="bg-slate-100 rounded-lg h-12 focus:outline-0 w-80">
+    </div>
+    <!-- <div class="flex flex-wrap space-x-4 mb-4">
+        <button class="category-btn" [ngClass]="{'active': activeCategory== 'all'}" (click)="filterByCategory('all')">All</button>
+        <button class="category-btn" [ngClass]="{'active': activeCategory== 'politics'}" (click)="filterByCategory('politics')">Politics</button>
+        <button class="category-btn"  [ngClass]="{'active': activeCategory== 'sports'}" (click)="filterByCategory('sports')">Sports</button>
+        <button class="category-btn" [ngClass]="{'active': activeCategory== 'entertainment'}" (click)="filterByCategory('entertainment')">Entertainment</button>
+        <button class="category-btn" [ngClass]="{'active': activeCategory== 'music'}" (click)="filterByCategory('music')">Music</button>
+        <button class="category-btn" [ngClass]="{'active': activeCategory== 'random'}" (click)="filterByCategory('random')">Random</button>
+      </div> -->
+    <div class="flex flex-wrap space-x-4 mb-4">
+        <button class="category-btn" [ngClass]="{'active': activeCategory === 'all'}"
+            (click)="filterByCategory('all')">All</button>
+        <button *ngFor="let category of categories" class="category-btn"
+            [ngClass]="{'active': activeCategory === category.id}" (click)="filterByCategory(category.id)">
+            {{ category.categoryName }}
+        </button>
+    </div>
+
+    <div *ngIf="filteredPostsByCategory.length === 0" class="text-center text-gray-600 mt-8">
+        No Posts Available
+    </div>
+
+    <!-- showing loader while featching -->
+    <div *ngIf="isCategoryFilteringLoading; else postContent" class="flex flex-col items-center justify-center mt-32">
+        <div class="loader border-t-4 border-blue-500 rounded-full w-12 h-12 animate-spin"></div>
+        <p class="mt-4">Showing Post...</p>
+    </div>
+
+    <ng-template #postContent>
+        <div *ngIf="filteredPostsByCategory.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let post of filteredPostsByCategory" class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img [src]="post.image" alt="Post Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">{{post.title}}</h2>
+                    <p class="text-gray-600 font-semibold mt-2">Category: {{ getCategoryName(post.categoryId) }}</p>
+
+                    <p class="text-gray-600 mt-2">{{post.description.slice(0,100)}}</p>
+                    <div class="flex justify-between mt-3">
+                        <span [routerLink]="'/post/' + post.postID"
+                            class="text-blue-500 hover:underline cursor-pointer">Read More</span>
+                        <div class="text-gray-500 text-sm">
+                            <p>Author: {{ post.authorName.toUpperCase() }}</p>
+                            <p>Posted on: {{ post.createdAt | date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Post Image" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h2 class="text-xl font-semibold">Post Title</h2>
+                <p class="text-gray-600 mt-2">Post description</p>
+                <a class="text-blue-500 hover:underline mt-4 block">Read More</a>
+            </div>
+        </div> -->
+            <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Post Image" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h2 class="text-xl font-semibold">Post Title</h2>
+                <p class="text-gray-600 mt-2">Post description</p>
+                <a class="text-blue-500 hover:underline mt-4 block">Read More</a>
+            </div>
+        </div> -->
+            <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Post Image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Post Title</h2>
+                    <p class="text-gray-600 mt-2">Post description</p>
+                <a class="text-blue-500 hover:underline mt-4 block">Read More</a>
+            </div>
+        </div> -->
+            <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Post Image" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h2 class="text-xl font-semibold">Post Title</h2>
+                <p class="text-gray-600 mt-2">Post description</p>
+                <a class="text-blue-500 hover:underline mt-4 block">Read More</a>
+            </div>
+        </div> -->
+        </div>
+    </ng-template>
+</div>

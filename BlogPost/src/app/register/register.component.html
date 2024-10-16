@@ -1,0 +1,29 @@
+<!-- Register Form -->
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
+      <h2 class="text-2xl font-bold text-center mb-6">Register</h2>
+      <form (ngSubmit)="register()">
+        <div class="mb-4">
+          <label for="userName" class="block text-sm font-medium text-gray-700">Username</label>
+          <input type="text" [(ngModel)]="userName" id="userName" name="userName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-4">
+          <label for="registerEmail" class="block text-sm font-medium text-gray-700">Email address</label>
+          <input type="email" [(ngModel)]="email" id="registerEmail" name="registerEmail" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter email" required>
+        </div>
+        <div class="mb-6">
+          <label for="registerPassword" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" [(ngModel)]="password" id="registerPassword" name="registerPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Password" required>
+        </div>
+        <!-- <div class="mb-6">
+          <label for="registerConfirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <input type="password" id="registerConfirmPassword" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Confirm Password" required>
+        </div> -->
+        <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Register</button>
+      </form> 
+      <div class="mt-4 text-center">
+        <p>Already have an account? <a routerLink="/" class="text-blue-500 hover:underline">Login</a></p>
+      </div>
+    </div>
+  </div>
+  

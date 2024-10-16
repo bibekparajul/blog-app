@@ -1,0 +1,18 @@
+<!-- navbar.component.html -->
+<nav class="bg-blue-600 p-4 shadow-md">
+  <div class="mx-auto flex items-center justify-between">
+    <a routerLink="/all-posts" class="text-white text-xl font-bold hover:text-gray-200">Post Portal</a>
+    <div class="space-x-9" style="margin-left: 70px;">
+      <a routerLink="/all-posts" class="nav-items">All Posts</a>
+      <a routerLink="/create-post" class="nav-items">Create Post</a>
+      <a routerLink="/profile" class="nav-items">Show Profile</a>
+    </div>
+    <div class="flex">
+      <div *ngIf="username" class="text-white font-semibold mt-2">
+        Welcome, {{username.toUpperCase()}}!
+      </div>
+      <button (click)="logout()"
+        class="text-white w-20 h-10 text-center rounded-lg ml-2 bg-red-500 hover:text-gray-200">Logout</button>
+    </div>
+  </div>
+</nav>

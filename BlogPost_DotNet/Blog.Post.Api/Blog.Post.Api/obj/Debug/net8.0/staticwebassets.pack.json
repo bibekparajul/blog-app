@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\0677224d-fa2b-4165-bdc2-5cc74befebe8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0677224d-fa2b-4165-bdc2-5cc74befebe8.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\125cf9ab-a895-4e92-9761-65547e465532.jpg",
+      "PackagePath": "staticwebassets\\uploads\\125cf9ab-a895-4e92-9761-65547e465532.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\1a300c3e-7e6b-4539-b49e-c69f0b2574c4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1a300c3e-7e6b-4539-b49e-c69f0b2574c4.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\330b1372-a742-49e1-ba7d-ddfe18a6f933.jpg",
+      "PackagePath": "staticwebassets\\uploads\\330b1372-a742-49e1-ba7d-ddfe18a6f933.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\6db6ffd0-07bd-4e03-b1db-607a782d30b1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6db6ffd0-07bd-4e03-b1db-607a782d30b1.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\8b682cd8-17ce-461f-bb1f-3ee0320f89c4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8b682cd8-17ce-461f-bb1f-3ee0320f89c4.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\9e80d5e5-77f7-4087-b448-8e1ecc41fdc3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9e80d5e5-77f7-4087-b448-8e1ecc41fdc3.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\ae75d58a-0cb3-4d6e-9f66-b4f150e3db15.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ae75d58a-0cb3-4d6e-9f66-b4f150e3db15.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\c0aa2c71-d136-41b1-9de0-ded4ff6afa4c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c0aa2c71-d136-41b1-9de0-ded4ff6afa4c.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\d35d2f2a-e081-426c-89da-337280527883.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d35d2f2a-e081-426c-89da-337280527883.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\dbf8213b-5b2c-4d9b-9185-e38a32c32956.jpg",
+      "PackagePath": "staticwebassets\\uploads\\dbf8213b-5b2c-4d9b-9185-e38a32c32956.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\fd3111fb-51de-4b6b-8372-200784c40b81.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fd3111fb-51de-4b6b-8372-200784c40b81.jpg"
+    },
+    {
+      "Id": "D:\\project_infinite\\BlogPost_DotNet\\Blog.Post.Api\\Blog.Post.Api\\wwwroot\\uploads\\fe831388-49e1-406e-88c8-5d76880dd643.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fe831388-49e1-406e-88c8-5d76880dd643.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Blog.Post.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Blog.Post.Api.props",
+      "PackagePath": "build\\Blog.Post.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Blog.Post.Api.props",
+      "PackagePath": "buildMultiTargeting\\Blog.Post.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Blog.Post.Api.props",
+      "PackagePath": "buildTransitive\\Blog.Post.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

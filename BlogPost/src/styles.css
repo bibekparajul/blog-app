@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+
+.delete-btn{
+    @apply bg-red-500 text-white px-4 py-2 rounded-lg
+}
+
+.edit-btn{
+    @apply bg-blue-500 text-white px-4 py-2 rounded-lg
+}
+
+.category-btn {
+    @apply bg-gray-200 text-gray-700 px-4 py-2 rounded-lg
+}
+
+.category-btn.active {
+    @apply bg-blue-500 text-white
+}
+
+.nav-items{
+    @apply text-white hover:text-gray-200
+}
+
+
+  

@@ -1,0 +1,121 @@
+<!-- <div class="container mx-auto px-4 py-8">
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h1 class="text-3xl font-bold mb-4">{{ post.title }}</h1>
+      <img [src]="post.imageUrl" alt="Post Image" class="w-full h-64 object-cover mb-4">
+      <p class="text-gray-700">{{ post.content }}</p> -->
+
+<!-- Comments Section -->
+<!-- <div class="mt-6">
+        <h2 class="text-2xl font-semibold mb-4">Comments</h2>
+        <div *ngFor="let comment of post.comments" class="bg-gray-100 p-4 mb-4 rounded-lg">
+          <p class="font-semibold">{{ comment.author }}</p>
+          <p class="text-gray-800">{{ comment.text }}</p> -->
+<!-- Replies Section -->
+<!-- <div *ngFor="let reply of comment.replies" class="ml-4 mt-2 bg-gray-200 p-2 rounded-lg">
+            <p class="font-semibold">{{ reply.author }}</p>
+            <p class="text-gray-700">{{ reply.text }}</p>
+          </div>
+        </div>
+      </div> -->
+
+<!-- Add Comment -->
+<!-- <div class="mt-6">
+        <h2 class="text-2xl font-semibold mb-4">Add a Comment</h2>
+        <form (ngSubmit)="addComment()">
+          <div class="mb-4">
+            <textarea [(ngModel)]="newComment.text" name="text" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Your comment" required></textarea>
+          </div>
+          <button type="submit" class="py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit Comment</button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+<!-- post-detail.component.html -->
+<app-navbar></app-navbar>
+<!-- Loader when deleting -->
+<div *ngIf="isDeleting; else postContent" class="flex flex-col items-center justify-center mt-60">
+  <div class="loader animate-spin"></div>
+  <p>Deleting Post...</p>
+</div>
+
+<ng-template #postContent>
+  <div class="container mx-auto px-4 py-8">
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <div class="flex justify-between">
+        <h1 class="text-3xl font-bold mb-4">{{post?.title}}</h1>
+        <!-- <div>
+        <button (click)="openDeleteModal()" class="delete-btn mx-2">Delete Post</button>
+        <button class="edit-btn" (click)="onEdit()">Edit Post</button>
+      </div> -->
+
+        <div *ngIf="canDeletePost()">
+          <button  (click)="openDeleteModal()" class="delete-btn mx-2">Delete Post</button>
+          <button class="edit-btn" (click)="onEdit()">Edit Post</button>
+        </div>
+
+      </div>
+      <!-- <p class="text-blue-700">{{post?.categoryId}}</p> -->
+      <p class="text-gray-700 font-bold mt-2">Category: {{ getCategoryName(post?.categoryId) }}</p>
+
+      <img src={{post?.image}} alt="Post Image" class="w-full h-80 object-cover mb-4">
+      <p class="text-gray-700 mb-3">{{post?.description}}</p>
+      <div class="flex flex-col justify-end">
+        <p class="text-gray-700 font-bold">Author Name: {{post?.authorName?.toUpperCase()}}</p>
+        <p class="text-gray-700 font-bold">Created Date: {{post?.createdAt?.slice(0,10)}}</p>
+      </div>
+
+
+      <!-- Delete confirmation code here -->
+      <app-delete-confirmation [isOpen]="isDeleteModalOpen" (confirm)="onDelete()" (cancel)="onCancelDelete()">
+
+      </app-delete-confirmation>
+
+
+
+      <!-- Comments Section -->
+      <div class="mt-6">
+        <h2 class="text-2xl font-semibold mb-4">Comments</h2>
+        <div *ngFor="let comment of comments" class="bg-gray-100 p-4 mb-4 rounded-lg">
+          <!-- <p class="font-semibold">Comment Author</p>
+        <p class="text-gray-800">Comment Test</p> -->
+          <p class="font-semibold">{{comment.authorName}}</p>
+          <p class="text-gray-800">{{comment.commentMessage}}</p>
+          <!-- Replies Section -->
+          <!-- <div class="ml-4 mt-2 bg-gray-200 p-2 rounded-lg">
+          <p class="font-semibold">Replying author</p>
+          <p class="text-gray-700">Replying Text</p>
+        </div> -->
+        </div>
+      </div>
+
+      <!-- Add Comment -->
+      <div class="mt-6">
+        <h2 class="text-2xl font-medium mb-4">Add a Comment</h2>
+        <!-- <form>
+        <div class="mb-4">
+          <textarea name="text" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+            placeholder="Your comment" required>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, vero dolor vitae tempora magnam deleniti eveniet ratione aut molestias 
+                praesentium quo soluta nam ab sed obcaecati iure veritatis atque facere.
+            </textarea>
+          </div>
+        <button type="submit"
+        class="py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit
+        Comment</button>
+      </form> -->
+
+        <form (ngSubmit)="addComment()">
+          <div class="mb-4">
+            <textarea [(ngModel)]="newCommentContent" name="text" rows="4"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Your comment"
+              required></textarea>
+          </div>
+          <button type="submit"
+            class="py-2 px-4 bg-blue-500 text-white font-bold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit
+            Comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
